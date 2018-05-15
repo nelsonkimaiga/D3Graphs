@@ -1,2 +1,6 @@
 # D3Graphs
-Simple graphs built using the d3js Javscript (My D3Js knowledge in a nutshell.)
+Graphical plottings developed using the powerful D3js Javascript library, html and Foundation CSS frameworks!
+
+
+#Running
+Hosted from GitHub pages (Link above in the repo description)
