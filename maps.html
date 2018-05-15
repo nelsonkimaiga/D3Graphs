@@ -1,53 +1,21 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>D3 Map</title>
-        <style>
-            path {
-        stroke: white;
-        stroke-width: 0.5px;
-        fill: black;
-      }
-    </style>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="js/vendor/jquery.min.js"></script>
-        <script src="js/d3.min.js"></script>
-        <script src="http://d3js.org/topojson.v1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.min.js"></script>
-    </head>
-    <body>
-        <svg width="1000" height="1300">
-            
-        </svg>
-        <script>
-var width = 960,
-    height = 500;
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3 Rhapsody</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <div class="grid-container">
+      
+    </div>
 
-var projection = d3.geo.mercator()
-    .center([0, 5 ])
-    .scale(900)
-    .rotate([-180,0]);
-
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-var path = d3.geo.path()
-    .projection(projection);
-
-var g = svg.append("g");
-
-// load and display the World
-d3.json("world-110m2.json", function(error, data) {
-    g.selectAll("path")
-      .data(topojson.object(topology, topology.objects.countries)
-          .geometries)
-    .enter()
-      .append("path")
-      .attr("d", path)
-});
-
-</script>
-    </body>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
