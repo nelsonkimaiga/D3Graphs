@@ -8,6 +8,27 @@
     <title>D3 Rhapsody</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+<!--    animation styling -->
+    <style type="text/css">
+        body {
+            font: Arial 18px;
+            text-align: center;
+        }
+        
+        path {
+            stroke: steelblue;
+            fill: none;
+            stroke-width: 2;
+        }
+        
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: grey;
+            stroke-width: 1;
+            shape-rendering: crispEdges;
+        }
+    </style>
 </head>
 
 <body>
@@ -83,7 +104,7 @@
             var x = svgElement.append("g").attr("transform", "translate(0," + height + ")").call(xAxis);
             //Add Y Axis
             var y = svgElement.append("g").call(yAxis);
-            y.append("text").attr("fill", "#000").attr("transform", "rotate(-90)").attr("y", 6).attr("dy", "0.71em").attr("text-anchor", "end").text("Price ($)");
+            y.append("text").attr("fill", "#000").attr("transform", "rotate(-90)").attr("y", 6).attr("dy", "0.71em").attr("text-anchor", "end").text("Price (Kshs)");
             //Length of path
             var totalLength = path.node().getTotalLength();
             //Animate the drawing of path using dash logic
